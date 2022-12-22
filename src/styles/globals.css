@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  * {
+    @apply box-border
+  }
+
+  *:focus {
+    outline: none;
+  }
+
+  html,
+  body {
+    @apply p-0 m-0 w-full h-full bg-[#0f0f0f] text-[#fff] tracking-wide break-words font-roboto
+  }
+
+  input {
+    @apply text-[#000]
+  }
+}
