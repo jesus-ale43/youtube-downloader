@@ -93,8 +93,8 @@ export default function VideoCard({ url }) {
                             }
                         </select> 
 
-                        <Link target="_blank" className='flex' href={selectedOption ? data.formatsDetails.filter(format => format.itag == selectedOption)[0].url : '#'} passHref>
-                            <button disabled={selectedOption ? false : true} className='disabled:cursor-not-allowed disabled:text-gray-300 px-5 ml-2 bg-[#272727] font-medium rounded-full text-sm text-center'>
+                        <Link target="_blank" className='flex' href={selectedOption === "null" ? '#' : data.formatsDetails.filter(format => format.itag == selectedOption)[0].url} passHref>
+                            <button disabled={selectedOption === "null" ? true : false} className='disabled:cursor-not-allowed disabled:text-gray-300 px-5 ml-2 bg-[#272727] font-medium rounded-full text-sm text-center'>
                                 Download
                             </button>
                         </Link>
