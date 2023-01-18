@@ -78,6 +78,9 @@ export default function VideoCard({ url }) {
                             onChange={e => setSelectedOption(e.target.value)} 
                             className='w-1/2 appearance-none bg-[#f1f1f1] text-black font-semibold rounded-full text-sm text-center'
                         >
+                            <option value="null">
+                                Select one
+                            </option>
                             {  
                                 data.formatsDetails.map((format, index) => {
                                     console.log(index)
