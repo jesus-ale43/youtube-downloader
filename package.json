@@ -1,22 +1,30 @@
 {
-  "name": "02-youtube-downloader",
-  "version": "0.1.0",
-  "private": true,
+  "name": "youtube-downloader",
+  "description": "A simple online youtube video downloader using ytdl-core.",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Jesús Alejandro (Jesus_ale43)",
+    "url": "https://github.com/jesus-ale43"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jesus-ale43/youtube-downloader.git"
+  },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/react-fontawesome": "^0.2.0",
     "autoprefixer": "10.4.14",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "next": "13.4.12",
     "postcss": "8.4.27",
+    "prettier": "^3.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "swr": "^2.2.0",
