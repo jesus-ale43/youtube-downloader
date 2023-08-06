@@ -8,7 +8,7 @@ export async function GET(request) {
   if (!video)
     return NextResponse.json(
       { error: "No video provided" },
-      { statusCode: 400 }
+      { statusCode: 400 },
     );
 
   try {
@@ -41,10 +41,10 @@ export async function GET(request) {
           quality: qualityLabel,
           format: container,
           url,
-        })
+        }),
       ),
     });
   } catch (error) {
-    return NextResponse.json({ error: 'Video not found' }, { statusCode: 404 });
+    return NextResponse.json({ error: "Video not found" }, { statusCode: 404 });
   }
 }

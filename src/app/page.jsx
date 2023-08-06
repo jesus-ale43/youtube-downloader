@@ -23,7 +23,10 @@ export default function Home() {
           </h2>
         </div>
         {submittedVideo && <VideoCard submittedVideo={submittedVideo} />}
-        <form onSubmit={handleSubmit} className="w-full flex flex-col md:flex-row">
+        <form
+          onSubmit={handleSubmit}
+          className="w-full flex flex-col md:flex-row"
+        >
           <input
             id="video"
             type="text"

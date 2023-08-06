@@ -3,22 +3,28 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { useState } from 'react';
+import { useState } from "react";
 import useSWR from "swr";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function VideoCard({ submittedVideo }) {
-  const { data, error } = useSWR(`/api/videoInfo?video=${submittedVideo}`, fetcher);
+  const { data, error } = useSWR(
+    `/api/videoInfo?video=${submittedVideo}`,
+    fetcher,
+  );
   const [selectedOption, setSelectedOption] = useState();
 
-  if (error) return <h1 className="text-center mb-10">An error has occurred.</h1>;
+  if (error)
+    return <h1 className="text-center mb-10">An error has occurred.</h1>;
   if (!data) return <h1 className="text-center mb-10">Loading...</h1>;
   if (data.error === "No video provided")
     return <h1 className="text-center mb-10">Where is the URL?</h1>;
   if (data.error === "Video not found")
     return (
-      <h1 className="text-center mb-10">Sorry, I couldn&apos;t find the video!</h1>
+      <h1 className="text-center mb-10">
+        Sorry, I couldn&apos;t find the video!
+      </h1>
     );
 
   const VerifiedBadge = () => {
@@ -115,7 +121,7 @@ export default function VideoCard({ submittedVideo }) {
               href={
                 selectedOption
                   ? data.formatsDetails.filter(
-                      (format) => format.itag == selectedOption
+                      (format) => format.itag == selectedOption,
                     )[0].url
                   : "#"
               }
